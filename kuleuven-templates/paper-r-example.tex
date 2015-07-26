@@ -1,0 +1,152 @@
+\documentclass[pagesize,english,DIV=calc,footinclude=false
+    ,DIV=14,twocolumn,fontsize=9pt
+]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[fleqn]{amsmath}
+\usepackage[nohyperlinks]{acronym}
+\usepackage{babel,lmodern,graphicx,mathptmx,xspace,wasysym,microtype,booktabs,tabularx,relsize,textcomp,longtable,lipsum,ifluatex,epstopdf}
+\usepackage[olditem,oldenum]{paralist}
+\usepackage[babel=true]{csquotes}
+\usepackage[thinqspace]{SIunits}
+\usepackage[normal,font=small]{caption}
+\usepackage[multiple,flushmargin]{footmisc}
+\usepackage{todonotes}
+
+\usepackage{url}
+\urlstyle{same}
+
+\usepackage{hyperref}
+\hypersetup{
+  pdftitle=Thorough research of this special topic regarding the influence of
+various factors,
+  pdfkeywords={},
+  pdfauthor=Author 1,
+  plainpages=false,
+  linktoc=all,
+  colorlinks=true,
+  anchorcolor=black,
+  menucolor=black,
+  linkcolor=black,
+  citecolor=black,
+  urlcolor=black,
+  filecolor=black,
+}
+
+\graphicspath{{figures/}}
+\DeclareGraphicsExtensions{.pdf,.jpeg,.png,.eps}         % Fix sort order in case the same file exists with multiple extensions
+\frenchspacing
+
+\input{templates/definitions.tex}
+
+\usepackage[normalem]{ulem}
+\pdfstringdefDisableCommands{\renewcommand{\sout}{}}
+
+\usepackage[style=authoryear-comp,natbib=true,backend=bibtex]{biblatex}
+\ExecuteBibliographyOptions{
+    bibencoding=ascii,
+    texencoding=utf8,
+    backref=false,
+    dashed=false,                                    % no dash instead of recurring author and editor names
+    maxnames=2,
+    maxbibnames=99,
+    uniquename=init,firstinits=true,terseinits=true, % only care about initials
+    useprefix=true,                                  % sort van Wieringen correctly
+    sortcites=false,                                 % do not sort multiple citations
+    doi=false,
+    url=false,
+    ,doi=true
+}
+\AtEveryBibitem{\clearfield{month}}
+\DeclareFieldFormat{eprint:pubmed}{\iffootnote{}{\mkbibacro{PMID}\addcolon\space
+  \ifhyperref
+    {\href{http://www.ncbi.nlm.nih.gov/pubmed/#1}{\nolinkurl{#1}}}
+    {\nolinkurl{#1}}}}
+\DeclareFieldFormat{isbn}{\iffootnote{}{\mkbibacro{ISBN}\addcolon\space
+  \ifhyperref{\href{http://amzn.com/#1}{\nolinkurl{#1}}}{\nolinkurl{#1}}}}
+\DeclareFieldFormat{issn}{}
+\setlength\bibhang{2em}
+
+\addbibresource{parsed-references.bib}
+
+
+\setcounter{secnumdepth}{2}
+
+\title{Thorough research of this special topic regarding the influence of
+various factors}
+\author{Author 1 \and Author 2}
+
+
+\begin{document}
+
+\maketitle
+
+
+{
+\hypersetup{linkcolor=black}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+
+\section{Heading 1}\label{heading-1}
+
+\subsection{Heading 2}\label{heading-2}
+
+\subsubsection{Heading 3}\label{heading-3}
+
+Default lists:
+
+\begin{itemize}
+\tightlist
+\item
+  Citations \autocite{Macherey2006} and inline,
+  \eg \textcite{Macherey2006}, references have a clickable link to
+  Pubmed (articles) or Amazon (books)
+\item
+  Standard abreviations \textbackslash{}eg and \textbackslash{}ie for
+  \eg and \ie to get the spacing right.
+\item
+  Some units like \pps{900}, look in the template to see which ones are
+  available.
+\item
+  \textbf{Highlights} and \emph{highlights}.
+\end{itemize}
+
+\subsection*{Unnumbered Heading}\label{unnumbered-heading}
+\addcontentsline{toc}{subsection}{Unnumbered Heading}
+
+Numbered lists:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  First paragraph
+\item
+  Second paragraph
+\item
+  Third paragraph
+
+  Continued paragraphs
+\end{enumerate}
+
+\m{easy margin notes}Inlined lists: \begin{inparaenum}[(1)] \item Aenean
+faucibus. \item Morbi dolor nulla, malesuada eu, pulvinar at, mollis ac,
+nulla. \item Curabitur auctor semper nulla. \end{inparaenum}
+
+See \emph{man pandoc\_markdown} for more information.
+
+\begin{figure}
+\includegraphics[]{paper-r-example-figures/iris-1.pdf}
+\caption{iris data}
+\end{figure}
+
+\begin{figure*}
+\includegraphics[]{paper-r-example-figures/iris-wide-1.pdf}
+\caption{iris data spanning columns}
+\end{figure*}
+
+\printbibliography
+
+
+\end{document}
