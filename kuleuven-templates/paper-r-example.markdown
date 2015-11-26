@@ -51,6 +51,8 @@ Inlined lists:
 \item Curabitur auctor semper nulla.
 [/ipe]
 
+##### *invisible heading
+
 See *man pandoc_markdown* for more information.
 
 ![iris data](paper-r-example-figures/iris-1.pdf) 
