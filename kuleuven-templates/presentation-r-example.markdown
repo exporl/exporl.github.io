@@ -105,7 +105,7 @@ Default lists:
 
 [column]
 
-![<1|handout:0><2>iris data](presentation-r-example-figures/iris-1.pdf) ![<1|handout:0><2>iris data](presentation-r-example-figures/iris-2.pdf) 
+![<1|handout:0><2>iris data](presentation-r-example-figures/iris-1.pdf)![<1|handout:0><2>iris data](presentation-r-example-figures/iris-2.pdf)
 
 [/columns]
 

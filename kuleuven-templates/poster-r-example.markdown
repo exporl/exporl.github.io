@@ -52,7 +52,7 @@ knit: (function(input, encoding, make = TRUE) { source('templates/makefile-rende
 
 # Iris data
 
-![iris data](poster-r-example-figures/iris-1.pdf) 
+![iris data](poster-r-example-figures/iris-1.pdf)
 
 # Blub
 

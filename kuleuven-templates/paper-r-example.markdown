@@ -55,6 +55,6 @@ Inlined lists:
 
 See *man pandoc_markdown* for more information.
 
-![iris data](paper-r-example-figures/iris-1.pdf) 
+![iris data](paper-r-example-figures/iris-1.pdf)
 
-![*iris data spanning columns](paper-r-example-figures/iris-wide-1.pdf) 
+![*iris data spanning columns](paper-r-example-figures/iris-wide-1.pdf)
