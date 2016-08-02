@@ -18,6 +18,7 @@
 \usepackage{amsmath}
 \usepackage[nohyperlinks]{acronym}
 \usepackage{babel,lmodern,graphicx,mathptmx,xspace,wasysym,microtype,booktabs,tabularx,relsize,textcomp,longtable,lipsum,colortbl,eurosym,url,multicol,etoolbox,multimedia,pdfpages,fixltx2e,ifluatex,epstopdf}
+\usepackage{appendixnumberbeamer}  % don't include appendix slides in slide count, restart numbering for appendix
 \usepackage[olditem,oldenum]{paralist}
 \usepackage[babel=true]{csquotes}
 \usepackage[thinqspace,amssymb,textstyle]{SIunits}
@@ -140,7 +141,7 @@
     \parbox[t][0.62cm]{\paperwidth}{\pgfuseshading{bgshading}}\par%
     \vskip-0.62cm%
     \begin{beamercolorbox}[ht=0.37cm,dp=0.25cm,center]{page number in head/foot}%
-    \insertframenumber%
+    \insertframenumber~/ \inserttotalframenumber%
     \end{beamercolorbox}%
     \vskip-0.92cm%
     \parbox[t][0.92cm]{\paperwidth}{\hskip10.33cm\includegraphics[width=2.10cm]{templates/kuleuven}}\par%
@@ -261,7 +262,7 @@
 
 
 \sectiontoc
-
+\subsectiontoc
 
 \newcommand{\defaultcanvas}{plain}
 
@@ -494,6 +495,16 @@ Numbered lists:
 
   Continued paragraphs
 \end{enumerate}
+
+\end{frame}
+
+\section{Appendix}\label{appendix}
+
+\appendix
+
+\begin{frame}{Appendix slide}
+
+This is an appendix slide. The page numbering has restarted.
 
 \end{frame}
 
